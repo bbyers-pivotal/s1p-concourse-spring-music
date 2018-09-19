@@ -28,4 +28,4 @@ else
   echo "blue" > ../../$ARTIFACTORY_COLOR_REGEX
 fi
 
-cp ../../$ARTIFACTORY_COLOR_REGEX blue-green-output/$ARTIFACTORY_COLOR_REGEX
+cp ../../$ARTIFACTORY_COLOR_REGEX ../../blue-green-output/$ARTIFACTORY_COLOR_REGEX

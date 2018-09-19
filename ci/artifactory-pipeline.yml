@@ -195,6 +195,13 @@ jobs:
     params:
       file: blue-green-output/*
 
+- name: bootstrap
+  serial_groups: [ version ]
+  plan:
+  - put: blue-green-file
+    params:
+      file: blue-green-output/*
+
 - name: major
   serial_groups: [ version ]
   plan:
