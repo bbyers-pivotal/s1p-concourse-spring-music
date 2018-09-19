@@ -196,12 +196,12 @@ jobs:
       file: blue-green-output/*
 
 - name: bootstrap
-  serial_groups: [ version ]
   plan:
+  - get: git-repo
   - task: initialize
     file: git-repo/ci/tasks/bootstrap.yml
     params:
-      ARTIFACTORY_COLOR_REGEX: ((ARTIFACTORY_COLOR_REGEX))
+      ARTIFACTORY_COLOR_FILENAME: ((ARTIFACTORY_COLOR_FILENAME))
   - put: blue-green-file
     params:
       file: blue-green-output/*

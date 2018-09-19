@@ -8,11 +8,11 @@ image_resource:
 
 inputs:
   - name: git-repo
-  
+
 outputs:
   - name: blue-green-output
 run:
   path: git-repo/ci/tasks/bootstrap.sh
 
 params:
-  ARTIFACTORY_COLOR_REGEX:
+  ARTIFACTORY_COLOR_FILENAME:
