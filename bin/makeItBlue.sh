@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp ../src/main/webapp/assets/css/blue-app.css ../src/main/webapp/assets/css/app.css
-git add ../src/main/webapp/assets/css/app.css
+cp ../src/main/resources/static/css/blue-app.css ../src/main/resources/static/css/app.css
+git add ../src/main/resources/static/css/app.css
 git commit -m 'making banner blue'
 git push
