@@ -2,4 +2,4 @@
 applications:
 - name: bb-spring-music-uat
   memory: 1G
-  buildpack: java_buildpack_offline
+  buildpack: java_buildpack
