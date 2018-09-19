@@ -6,6 +6,9 @@ image_resource:
   source:
     repository: brianbyers/concourse-git
 
+inputs:
+  - name: git-repo
+  
 outputs:
   - name: blue-green-output
 run:
