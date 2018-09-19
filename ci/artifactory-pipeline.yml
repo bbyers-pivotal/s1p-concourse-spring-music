@@ -191,6 +191,7 @@ jobs:
       GIT_REPO: ((GIT_REPO))
       PASSWORD: ((GIT_PERSONAL_ACCESS_TOKEN))
       ARTIFACTORY_COLOR_FILENAME: ((ARTIFACTORY_COLOR_FILENAME))
+      GIT_REPO_URL: ((GIT_REPO_URL))
   - put: blue-green-file
     params:
       file: blue-green-output/*

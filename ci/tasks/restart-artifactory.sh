@@ -2,7 +2,7 @@
 set -e
 
 #clone the repo
-git clone https://$PASSWORD@github.com/bbyers-pivotal/s1p-concourse-spring-music.git
+git clone https://$PASSWORD@$GIT_REPO_URL
 
 #meow the color
 color=`cat blue-green-file/$ARTIFACTORY_COLOR_FILENAME`
