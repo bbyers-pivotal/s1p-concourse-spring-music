@@ -1,5 +1,5 @@
 ---
 applications:
-- name: spring-music-test
+- name: bb-spring-music-test
   memory: 1G
   buildpack: java_buildpack_offline
