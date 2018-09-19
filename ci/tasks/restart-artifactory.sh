@@ -5,7 +5,7 @@ set -e
 git clone https://$PASSWORD@github.com/s1p-demo/concourse-spring-music.git
 
 #meow the color
-color=`cat color`
+color=`cat blue-treen-output/$ARTIFACTORY_COLOR_FILENAME`
 
 # make it colorful!
 cd concourse-spring-music
@@ -21,11 +21,11 @@ echo "Current color: "$color
 if [ "$color" == "blue" ]; then
   echo "turning banner green"
   ./makeItGreen.sh
-  echo "green" > ../../$ARTIFACTORY_COLOR_REGEX
+  echo "green" > ../../$ARTIFACTORY_COLOR_FILENAME
 else
   echo "turning banner blue"
   ./makeItBlue.sh
-  echo "blue" > ../../$ARTIFACTORY_COLOR_REGEX
+  echo "blue" > ../../$ARTIFACTORY_COLOR_FILENAME
 fi
 
-cp ../../$ARTIFACTORY_COLOR_REGEX ../../blue-green-output/$ARTIFACTORY_COLOR_REGEX
+cp ../../$ARTIFACTORY_COLOR_FILENAME ../../blue-green-output/$ARTIFACTORY_COLOR_FILENAME
