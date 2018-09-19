@@ -8,7 +8,7 @@ git clone https://$PASSWORD@github.com/bbyers-pivotal/s1p-concourse-spring-music
 color=`cat blue-green-file/$ARTIFACTORY_COLOR_FILENAME`
 
 # make it colorful!
-cd concourse-spring-music
+cd s1p-concourse-spring-music
 cd bin
 
 #add git config so it stops complaining about not having user info
