@@ -5,7 +5,7 @@ set -e
 git clone https://$PASSWORD@github.com/s1p-demo/concourse-spring-music.git
 
 #meow the color
-color=`cat blue-treen-output/$ARTIFACTORY_COLOR_FILENAME`
+color=`cat blue-green-output/$ARTIFACTORY_COLOR_FILENAME`
 
 # make it colorful!
 cd concourse-spring-music
