@@ -8,13 +8,10 @@ image_resource:
 
 inputs:
   - name: git-repo
-  - name: blue-green-file
 
-outputs:
-  - name: blue-green-output
 run:
   path: git-repo/ci/tasks/restart-artifactory.sh
 
 params:
-  PASSWORD:
   GIT_REPO_URL:
+  PASSWORD:
