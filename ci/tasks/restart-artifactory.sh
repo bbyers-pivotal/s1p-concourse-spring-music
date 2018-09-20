@@ -3,9 +3,10 @@ set -e
 
 #clone the repo
 git clone https://$PASSWORD@$GIT_REPO_URL
+git clone --single-branch -b color https://$PASSWORD@$GIT_REPO_URL colorBranch
 
 #meow the color
-color=`cat blue-green-file/$ARTIFACTORY_COLOR_FILENAME`
+color=`cat colorBranch/color`
 
 # make it colorful!
 cd s1p-concourse-spring-music
@@ -21,14 +22,16 @@ echo "Current color: "$color
 if [ "$color" == "blue" ]; then
   echo "turning banner green"
   ./makeItGreen.sh
-  echo "green" > ../../$ARTIFACTORY_COLOR_FILENAME
+  echo "green" > ../../colorBranch/color
 else
   echo "turning banner blue"
   ./makeItBlue.sh
-  echo "blue" > ../../$ARTIFACTORY_COLOR_FILENAME
+  echo "blue" > ../../colorBranch/color
 fi
 
-cp ../../$ARTIFACTORY_COLOR_FILENAME ../../blue-green-output/$ARTIFACTORY_COLOR_FILENAME
-
-newColor=`cat ../../blue-green-output/$ARTIFACTORY_COLOR_FILENAME`
 echo "New color to save"
+newColor=`cat ../../colorBranch/color`
+cd ../../colorBranch
+git add color
+git commit -m "saving color $newColor"
+git push

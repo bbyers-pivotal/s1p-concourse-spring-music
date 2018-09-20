@@ -186,13 +186,28 @@ jobs:
   - task: restart-it
     file: git-repo/ci/tasks/restart.yml
     params:
-      GIT_REPO: ((GIT_REPO))
       PASSWORD: ((GIT_PERSONAL_ACCESS_TOKEN))
-      ARTIFACTORY_COLOR_FILENAME: ((ARTIFACTORY_COLOR_FILENAME))
       GIT_REPO_URL: ((GIT_REPO_URL))
-  - put: blue-green-file
+
+- name: makeItBlue
+  plan:
+  - aggregate:
+    - get: git-repo
+  - task: changeIt
+    file: git-repo/ci/tasks/makeItBlue.yml
     params:
-      file: blue-green-output/*
+      PASSWORD: ((GIT_PERSONAL_ACCESS_TOKEN))
+      GIT_REPO_URL: ((GIT_REPO_URL))
+
+- name: makeItGreen
+  plan:
+  - aggregate:
+    - get: git-repo
+  - task: changeIt
+    file: git-repo/ci/tasks/makeItGreen.yml
+    params:
+      PASSWORD: ((GIT_PERSONAL_ACCESS_TOKEN))
+      GIT_REPO_URL: ((GIT_REPO_URL))
 
 - name: bootstrap
   plan:
