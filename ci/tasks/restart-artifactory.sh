@@ -29,3 +29,6 @@ else
 fi
 
 cp ../../$ARTIFACTORY_COLOR_FILENAME ../../blue-green-output/$ARTIFACTORY_COLOR_FILENAME
+
+newColor=`cat ../../blue-green-output/$ARTIFACTORY_COLOR_FILENAME`
+echo "New color to save"

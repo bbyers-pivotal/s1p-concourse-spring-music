@@ -182,8 +182,6 @@ jobs:
   - aggregate:
     - get: git-repo
     - get: version
-      passed: [patch]
-      trigger: true
     - get: blue-green-file
   - task: restart-it
     file: git-repo/ci/tasks/restart.yml
