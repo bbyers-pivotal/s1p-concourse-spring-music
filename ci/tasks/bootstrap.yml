@@ -9,9 +9,10 @@ image_resource:
 inputs:
   - name: git-repo
 
+outputs:
+  - name: blue-green-output
 run:
-  path: git-repo/ci/tasks/restart-artifactory.sh
+  path: git-repo/ci/tasks/bootstrap.sh
 
 params:
-  GIT_REPO_URL:
-  PASSWORD:
+  ARTIFACTORY_COLOR_FILENAME:
